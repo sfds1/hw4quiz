@@ -1,47 +1,7 @@
-## Password Generator - Homework #3 - Javascript
+# Multiple-Choice-Quiz-JavaScript
+Today we're going to create a multiple choice quiz using JavaScript, in this quiz, the user will have to choose the correct answer out of three choices, in less than 10 seconds, if the user didn't answer the question in 10sec, it will go to the next question automatically, and the question is marked wrong. the user has a progress bar, that shows the total number of question, and also if the user answered a question correctly or not.
 
-## Description 
+Watch The Tutorial On Youtube: 
+https://www.youtube.com/watch?v=49pYIMygIcU
 
-This site generates a random password based on user entered criteria.  The length has to be between 8 and 128 characters and have at least 1 option from numbers, lowercase, uppercase and special characters.
-
-This would be something for employees with higher level access so security should be stronger.
-
-## Business Context
-
-For companies that handle large amounts of sensitive data, weak passwords can pose a real security threat. An application that can generate strong passwords quickly and effortlessly saves employees time and ensures secure access to data.
-
-
-## Installation
-
-Please go to https://sfds1.github.io/hw3pwgenerator/ to view my site.
-
-
-## Usage 
-
-This site generates a random password based on user entered criteria.  The length has to be between 8 and 128 characters and have at least 1 option from numbers, lowercase, uppercase and special characters.
-
-
-## Credits
-
-Of course this project would not have been possible without the Berkeley school and the awesome teaching staff there.
-
-
-## License
-
-I don't have a license for this project.
-
-
-
-## Questions
-
-For Javascript
-
-1. Is it "better" to use checkboxes and ask all at once versus prompts?  Maybe developer preference?
-
-2. Why if I use let inside while or if statements the variable is not the same color as the other variables? 
-   If I change to var then the color matches for all variables
-
-3.  Is it better to use string or array for the password?
-  Answer, maybe: which option is slower/faster (runtime) to process and/or takes up more/less storage (space complexity)
-  Maybe also what want to do with information later.  Certain functions work on certain types
 
