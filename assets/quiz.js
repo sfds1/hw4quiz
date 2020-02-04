@@ -1,12 +1,43 @@
 
+// returns the first element within the document that matches
+const startBtn = document.querySelector("#startQuiz");
+
+const timer = document.querySelector("#timer");
 
 
+let secondsLeft = 30;
+
+// when the start button is clicked, the startQuiz function is called
+startBtn.addEventListener("click", startQuiz);
+
+
+// Starts the quiz
+function startQuiz() {
+	// displayQuestion();
+	setTime();
+};
+
+// Starts timer
+function setTime() {
+	var timerInterval = setInterval(function () {
+		secondsLeft--;
+		timer.innerHTML = `
+		<div>Time Remaining: ${secondsLeft} seconds
+		<br>
+    </div>
+		`;
+		if (secondsLeft <= 0) {
+			clearInterval(timerInterval);
+			// return endGame();
+		}
+	}, 1000);
+};
 /*
-  on page load: 
-    show game start screen
-    include how to play instructions
-    add start quiz button
-    
+ on page load: 
+  show game start screen
+  include how to play instructions
+  add start quiz button
+
   on start button click:
     hide game-start div 
     show questions div
