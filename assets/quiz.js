@@ -4,6 +4,7 @@
 const startBtn = document.getElementById("startQuiz");
 const timer = document.getElementById("timer");
 const quiz = document.getElementById('quiz');
+const message = document.getElementById('message');
 
 let secondsLeft = 30;
 let currentQuestion = 0;
@@ -38,6 +39,7 @@ function startQuiz() {
 };
 
 // Starts timer
+// when the timer hits zero then clear the timer and end the game
 function timerCountdown() {
 	var timerInterval = setInterval(function () {
 		secondsLeft--;
@@ -48,7 +50,7 @@ function timerCountdown() {
 		`;
 		if (secondsLeft <= 0) {
 			clearInterval(timerInterval);
-			// return endGame();
+			return endGame();
 		}
 	}, 1000);
 };
@@ -61,7 +63,45 @@ function displayQuestion() {
 	quiz.innerHTML = `${questions[currentQuestion].subject}<br>${questList.join("")}`;
 };
 
+// Adds to score if answered correctly
+// Subtracts time if answered correctly
+// Shows message about answer
+// When all questions are answered, then quiz ends
+function answerQuestion(selection) {
+	if (questions[currentQuestion].answer === selection) {
+    message.innerHTML = '<p> Correct</p>';
+		// score++;
+	} else {
+    message.innerHTML = '<p> Wrong</p>';
+    secondsLeft -= 10;
+	}
+	currentQuestion++;
+	if (currentQuestion === questions.length) {
+		return endGame();
+	}
+	displayQuestion();
+};
 
+
+// Displays your final score and allows a High Score input area
+// Retry button also appears
+function endGame() {
+
+  quiz.innerHTML = '<p> End</p>';
+
+	// quiz.innerHTML = `
+	// 	<p>You got ${score} of ${questions.length}</p>
+	// 	<br><br>
+  //   <form onsubmit="handleScoreSave(event)">
+  //     <input type="text" placeholder="Enter Initials"></input>
+  //     <input type="submit" value="Save Score"></input>
+	// 	</form>
+  // `;
+  secondsLeft = 1;
+// 	timer.innerHTML = `
+// 	<button id="retry" onclick="restartGame()">Retry?</button>
+// `;
+};
 
 /*
  on page load: 
