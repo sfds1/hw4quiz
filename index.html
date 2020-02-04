@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Browser tab title -->
+  <title>Developer Language Quiz</title>
+
+    <!-- Bring in the bootstrap CSS getbootstrap.com-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+   <!-- still need css file to override Bootstrap defaults.  The css file is AFTER Bootstrap as code reads top to bottom -->
+  <link rel="stylesheet" href="./assets/style.css">
+
+</head>
+
+<body>
+
+  <div>
+    <button id="highScores">High Scores</button>
+
+  </div>
+
+  <div id="timer" class="float-right">
+</div>
+
+  <div id="quiz" class="center">
+    <div id="results"></div>
+  </div>
+
+  <br><br>
+
+  <!-- Hides the start button once it is clicked -->
+  <div id="startQuiz" class="center" onClick="this.style.visibility='hidden'">
+    <button id="startBtn">Start Quiz</button>
+    <br><br>
+    <p>
+      Instructions:
+      <br> <br>
+      You have 30 seconds to answer three questions about development languages.
+      <br>
+      If you answer correctly, the next question will appear
+      <br>
+      If you answer incorrectly, you will lose 10 seconds and the next question will appear
+
+    </p>
+  </div>
+
+  <script src="./assets/quiz.js"></script>
+
+</body>
+
+</html>
