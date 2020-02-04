@@ -1,11 +1,31 @@
 
-// returns the first element within the document that matches
-const startBtn = document.querySelector("#startQuiz");
-
-const timer = document.querySelector("#timer");
-
+// returns the elements that match the ID listed in quotes
+// have to be careful if use the ID in multiple places but IDs should be used once
+const startBtn = document.getElementById("startQuiz");
+const timer = document.getElementById("timer");
+const quiz = document.getElementById('quiz');
 
 let secondsLeft = 30;
+let currentQuestion = 0;
+
+// questions for quiz
+const questions = [
+  {
+      subject : "What does HTML stand for?",
+      choices : ["Hyper Text Markup Language", "How To Manipulate Language", "Hello To My Lady"],
+      answer : "Hyper Text Markup Language"
+  },
+  {
+      subject : "What does CSS stand for?",
+      choices : ["Cascading Style Sets", "Cascading Style Sheets", "Coding Source Sheets"],
+      answer : "Cascading Style Sheets"
+  },
+  {
+      subject : "What does JS stand for?",
+      choices : ["JavaSit", "JavaSplit", "JavaScript"],
+      answer : "JavaScript"
+  }
+];
 
 // when the start button is clicked, the startQuiz function is called
 startBtn.addEventListener("click", startQuiz);
@@ -13,12 +33,12 @@ startBtn.addEventListener("click", startQuiz);
 
 // Starts the quiz
 function startQuiz() {
-	// displayQuestion();
-	setTime();
+  timerCountdown();
+  displayQuestion();
 };
 
 // Starts timer
-function setTime() {
+function timerCountdown() {
 	var timerInterval = setInterval(function () {
 		secondsLeft--;
 		timer.innerHTML = `
@@ -32,6 +52,17 @@ function setTime() {
 		}
 	}, 1000);
 };
+
+// Generates questions and answer option buttons
+function displayQuestion() {
+	let questList = questions[currentQuestion].choices.map((question) => {
+		return `<button class="answerBtn" onclick="answerQuestion('${question}')">${question}</button>`;
+	});
+	quiz.innerHTML = `${questions[currentQuestion].subject}<br>${questList.join("")}`;
+};
+
+
+
 /*
  on page load: 
   show game start screen
