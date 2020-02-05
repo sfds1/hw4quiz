@@ -5,9 +5,11 @@ const startBtn = document.getElementById("startQuiz");
 const timer = document.getElementById("timer");
 const quiz = document.getElementById('quiz');
 const message = document.getElementById('message');
+const outcome = document.getElementById('outcome');
 
 let secondsLeft = 30;
 let currentQuestion = 0;
+let score = 0;
 
 // questions for quiz
 const questions = [
@@ -35,7 +37,7 @@ startBtn.addEventListener("click", startQuiz);
 // Starts the quiz
 function startQuiz() {
   timerCountdown();
-  displayQuestion();
+  renderQuestion();
 };
 
 // Starts timer
@@ -56,9 +58,9 @@ function timerCountdown() {
 };
 
 // Generates questions and answer option buttons
-function displayQuestion() {
+function renderQuestion() {
 	let questList = questions[currentQuestion].choices.map((question) => {
-		return `<button class="answerBtn" onclick="answerQuestion('${question}')">${question}</button>`;
+		return `<button class="answerBtn" onclick="checkAnswer('${question}')">${question}</button>`;
 	});
 	quiz.innerHTML = `${questions[currentQuestion].subject}<br>${questList.join("")}`;
 };
@@ -67,10 +69,10 @@ function displayQuestion() {
 // Subtracts time if answered correctly
 // Shows message about answer
 // When all questions are answered, then quiz ends
-function answerQuestion(selection) {
+function checkAnswer(selection) {
 	if (questions[currentQuestion].answer === selection) {
     message.innerHTML = '<p> Correct</p>';
-		// score++;
+		score++;
 	} else {
     message.innerHTML = '<p> Wrong</p>';
     secondsLeft -= 10;
@@ -79,7 +81,7 @@ function answerQuestion(selection) {
 	if (currentQuestion === questions.length) {
 		return endGame();
 	}
-	displayQuestion();
+	renderQuestion();
 };
 
 
@@ -89,14 +91,10 @@ function endGame() {
 
   quiz.innerHTML = '<p> End</p>';
 
-	// quiz.innerHTML = `
-	// 	<p>You got ${score} of ${questions.length}</p>
-	// 	<br><br>
-  //   <form onsubmit="handleScoreSave(event)">
-  //     <input type="text" placeholder="Enter Initials"></input>
-  //     <input type="submit" value="Save Score"></input>
-	// 	</form>
-  // `;
+	 message.innerHTML = `
+	 	<p>You got ${score} of ${questions.length} correct.</p>
+	 	<br><br>
+   `;
   secondsLeft = 1;
 // 	timer.innerHTML = `
 // 	<button id="retry" onclick="restartGame()">Retry?</button>
@@ -154,4 +152,8 @@ function endGame() {
     clearScores()
     toggleScores()
 
+      //   <form onsubmit="handleScoreSave(event)">
+  //     <input type="text" placeholder="Enter Initials"></input>
+  //     <input type="submit" value="Save Score"></input>
+	// 	</form>
 */
