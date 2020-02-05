@@ -5,7 +5,7 @@ const startBtn = document.getElementById("startQuiz");
 const timer = document.getElementById("timer");
 const quiz = document.getElementById('quiz');
 const message = document.getElementById('message');
-const outcome = document.getElementById('outcome');
+
 
 let secondsLeft = 30;
 let currentQuestion = 0;
@@ -37,7 +37,11 @@ startBtn.addEventListener("click", startQuiz);
 // Starts the quiz
 function startQuiz() {
   timerCountdown();
-  renderQuestion();
+
+  // waits 1 second to display the question so the question and timer show at the same time
+  setTimeout (() => {
+    renderQuestion();
+  },1000);
 };
 
 // Starts timer
@@ -100,6 +104,11 @@ function endGame() {
 // 	<button id="retry" onclick="restartGame()">Retry?</button>
 // `;
 };
+
+function saveScore() {
+  localStorage.setItem("score", score);
+}
+
 
 /*
  on page load: 

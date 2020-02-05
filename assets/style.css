@@ -1,0 +1,53 @@
+.container {
+    width: 100 vw;
+    height: 100vh;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    max-width: 80rem;
+    /* margin: 0 auto; */
+  
+    /* margin-left: 60px; */
+   
+
+}
+/* all children in container will be max width of the container */
+.container > * {
+    max-width: 100%;
+}
+.flex-column {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+
+}
+
+#startBtn {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid blue;
+    margin-bottom: 1rem;
+    color: lightskyblue;
+    background-color: white;
+
+}
+
+#scores {
+    font-size: 1rem;
+    padding: 1rem 0;
+    width: 10rem;
+    text-align: center;
+    border: 0.1rem solid blue;
+    margin-bottom: 1rem;
+    color: lightskyblue;
+    background-color: white;
+    
+
+}

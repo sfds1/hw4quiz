@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- Browser tab title -->
-  <title>Developer Language Quiz</title>
+  <title>Developer Quiz</title>
 
     <!-- Bring in the bootstrap CSS getbootstrap.com-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -16,46 +16,51 @@
 
 <body>
 
-  <div>
-    <button id="highScores">High Scores</button>
+    <div class="container">
 
-  </div>
+        <br>
+        <div  class="flex-center flex-column">
+            <button id="scores">Scores</button>
+            </div>
 
-  <div id="timer" class="float-right">
+            <br>
+
+            <div id="timer" class="float-right">
+            </div>
+    
+            <br>
+    
+            <div id="quiz" class="flex-center flex-column">
+
+
+            </div>
+    
+            <br>
+            <div id="message" class="flex-center flex-column"> </div>
+
+        <!-- on page load: 
+        show game start screen
+        include how to play instructions
+        add start quiz button -->
+
+        <!-- Hides the start quiz div once the user starts the quiz-->
+        <div id="startQuiz" class="flex-center flex-column" onClick="this.style.visibility='hidden'">
+            <button id="startBtn">Start Quiz</button>
+            <br><br>
+            <p>
+            Instructions:
+            <br> <br>
+            You have 30 seconds to answer three questions about development languages.
+            <br>
+            If you answer correctly, the next question will appear
+            <br>
+            If you answer incorrectly, you will lose 10 seconds and the next question will appear
+
+            </p>
+        </div>
+
+       
 </div>
-
-<br><br>
-
-  <div id="quiz" class="center">
-   
-    <!-- <div id="outcome"></div> -->
-
-  </div>
-
-  <br><br>
-  <div id="message"></div>
-  <!-- on page load: 
-  show game start screen
-  include how to play instructions
-  add start quiz button -->
-
-  <!-- Hides the start quiz div once the user starts the quiz is clicked -->
-  <div id="startQuiz" class="center" onClick="this.style.visibility='hidden'">
-    <button id="startBtn">Start Quiz</button>
-    <br><br>
-    <p>
-      Instructions:
-      <br> <br>
-      You have 30 seconds to answer three questions about development languages.
-      <br>
-      If you answer correctly, the next question will appear
-      <br>
-      If you answer incorrectly, you will lose 10 seconds and the next question will appear
-
-    </p>
-  </div>
-
-
   <script src="./assets/quiz.js"></script>
 
 </body>
