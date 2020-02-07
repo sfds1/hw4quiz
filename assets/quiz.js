@@ -97,18 +97,31 @@ function endGame() {
 
 	 message.innerHTML = `
 	 	<p>You got ${score} of ${questions.length} correct.</p>
-	 	<br><br>
+     <br><br>
+     <form onsubmit="saveScore(event)">
+      <input type="text" placeholder="Enter Name"></input>
+      <input type="submit" value="Save Score"></input>
+		</form>
+  `;
+	secondsLeft = 0;
+	timer.innerHTML = `
+	<button id="retry" onclick="playAgain()">Play Again?</button>
    `;
-  secondsLeft = 1;
-// 	timer.innerHTML = `
-// 	<button id="retry" onclick="restartGame()">Retry?</button>
-// `;
+
 };
 
 function saveScore() {
   localStorage.setItem("score", score);
 }
 
+// Function to run the Play Again button, this restarts the quiz
+function playAgain() {
+	secondsLeft = 30;
+	currentQuestion = 0;
+  score = 0;
+  message.innerHTML = ``;
+	startQuiz();
+};
 
 /*
  on page load: 
@@ -161,8 +174,4 @@ function saveScore() {
     clearScores()
     toggleScores()
 
-      //   <form onsubmit="handleScoreSave(event)">
-  //     <input type="text" placeholder="Enter Initials"></input>
-  //     <input type="submit" value="Save Score"></input>
-	// 	</form>
 */
