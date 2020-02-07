@@ -5,11 +5,18 @@ const startBtn = document.getElementById("startQuiz");
 const timer = document.getElementById("timer");
 const quiz = document.getElementById('quiz');
 const message = document.getElementById('message');
+const name = document.getElementById('name');
 
+// pulls highscores from local storage.  If first time and nothing in localstorage, then make it an empty array
+  // local storage stores items as a string
+  // if want to store array, then need to use JSON.stringify to make a string
+  // to convert to an array, then need to use JSON.parse
+const highScores = JSON.parse(localStorage.getItem('highScore')) || [];
 
 let secondsLeft = 30;
 let currentQuestion = 0;
 let score = 0;
+
 
 // questions for quiz
 const questions = [
@@ -37,7 +44,7 @@ startBtn.addEventListener("click", startQuiz);
 // Starts the quiz
 function startQuiz() {
   timerCountdown();
-
+  quiz.innerText = 'Ready?'
   // waits 1 second to display the question so the question and timer show at the same time
   setTimeout (() => {
     renderQuestion();
@@ -89,7 +96,7 @@ function checkAnswer(selection) {
 };
 
 
-// Displays your final score and allows a High Score input area
+// Displays your final score and allows a Save Score input area
 // Retry button also appears
 function endGame() {
 
@@ -99,7 +106,7 @@ function endGame() {
 	 	<p>You got ${score} of ${questions.length} correct.</p>
      <br><br>
      <form onsubmit="saveScore(event)">
-      <input type="text" placeholder="Enter Name"></input>
+      <input type="text" id = "name" placeholder="Enter Name"></input>
       <input type="submit" value="Save Score"></input>
 		</form>
   `;
@@ -111,7 +118,16 @@ function endGame() {
 };
 
 function saveScore() {
-  localStorage.setItem("score", score);
+
+localStorage.setItem('score', score);
+
+  const scoreName = {
+    score: score,
+    name: name.value
+  }
+  highScores.push(scoreName);
+  console.log(highScores);
+
 }
 
 // Function to run the Play Again button, this restarts the quiz
