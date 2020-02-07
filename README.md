@@ -17,10 +17,25 @@ The application is a three question multiple choice quiz. In this quiz, the user
 This application uses Javascript, CSS, HTML, Bootstrap
 
 ## Challenges
+This assignment was challenging all around.  Functions are crazy and trying to tie all that we have learned together is a big task.
 
 ## Your experience building this app
+This app took me a while to complete as it is hard to work on things piecemeal.  I am finding that trying to do this part time while working is harder than I thought, but I am learning each day so that is good.
+
 ## What was difficult
+Trying to remember all the right syntax.
+
 ## What did you learn
+I learned more about functions and localStorage
+
 ## How did you go about solving a problem
+Many, times I had to Google items to further my knowledge in a topic.  Thank ngoodness for all the people who like to post things online.
+
 ## Screenshot
+
+I tried to paste a screenshot here but it wouldn't paste so let me know how to do that.  Thanks.
+
+
 ## Live app, not code
+
+Not sure what goes here.  Let me know.  Thanks.
