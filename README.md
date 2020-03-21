@@ -42,4 +42,6 @@ Many, times I had to Google items to further my knowledge in a topic.  Thank goo
 
 ## Live app, not code
 
+![](images/quiz_home.png)
 
+![](images/high_score.png)
