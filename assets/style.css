@@ -39,15 +39,16 @@
 
 }
 
-#scores {
+#scoresList {
     font-size: 1rem;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     width: 10rem;
     text-align: center;
-    border: 0.1rem solid blue;
-    margin-bottom: 1rem;
+    /* border-bottom: 0.1rem solid blue; */
+    /* margin-bottom: 1rem; */
     color: lightskyblue;
-    background-color: white;
+    /* background-color: white; */
+    
     
 
 }

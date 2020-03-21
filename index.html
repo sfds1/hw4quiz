@@ -6,37 +6,37 @@
   <!-- Browser tab title -->
   <title>Developer Quiz</title>
 
-    <!-- Bring in the bootstrap CSS getbootstrap.com-->
+  <!-- Bring in the bootstrap CSS getbootstrap.com-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-   <!-- still need css file to override Bootstrap defaults.  The css file is AFTER Bootstrap as code reads top to bottom -->
+  <!-- still need css file to override Bootstrap defaults.  The css file is AFTER Bootstrap as code reads top to bottom -->
   <link rel="stylesheet" href="./assets/style.css">
 
 </head>
 
 <body>
 
-    <div class="container">
+  <div class="container">
+
+    <div class="flex-left col-4">
+      <p>High Scores</p>
+      <div>
+        <ul id="list"></ul>
+      </div>
+
+      <div class="col-8">
+        <div id="timer" class="float-right">
+        </div>
 
         <br>
-        <!-- <div  class="flex-center flex-column">
-            <button id="scores">Scores</button>
-            </div>
 
-            <br> -->
-
-            <div id="timer" class="float-right">
-            </div>
-    
-            <br>
-    
-            <div id="quiz" class="flex-center flex-column">
+        <div id="quiz" class="flex-center flex-column ">
 
 
-            </div>
-    
-            <br>
-            <div id="message" class="flex-center flex-column"> </div>
+        </div>
+
+        <br>
+        <div id="message" class="flex-center flex-column"> </div>
 
         <!-- on page load: 
         show game start screen
@@ -45,9 +45,9 @@
 
         <!-- Hides the start quiz div once the user starts the quiz-->
         <div id="startQuiz" class="flex-center flex-column" onClick="this.style.visibility='hidden'">
-            <button id="startBtn">Start Quiz</button>
-            <br><br>
-            <p>
+          <button id="startBtn">Start Quiz</button>
+          <br><br>
+          <p>
             Instructions:
             <br> <br>
             You have 30 seconds to answer three questions about development languages.
@@ -56,12 +56,14 @@
             <br>
             If you answer incorrectly, you will lose 10 seconds and the next question will appear
 
-            </p>
+          </p>
         </div>
 
-       
-</div>
-  <script src="./assets/quiz.js"></script>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="./assets/quiz.js"></script>
 
 </body>
 
